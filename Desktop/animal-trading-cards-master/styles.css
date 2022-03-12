@@ -1,0 +1,28 @@
+/* add your CSS here */
+img {
+  height:300px;
+  width:300px;
+  margin:5px;
+}
+.container{
+text-align: left;
+border:1px solid  #B4B5B0;
+padding:5px;
+width:310px;
+font:normal 18px "Times New Roman", Times, serif;
+}
+.shrimp-descriptions{
+ border:1px solid #B4B5B0;
+ margin:5px;
+ padding:10px;
+}
+ ul{
+padding:0px;
+list-style-type:none;
+}
+#fact{
+font:italic 18px "Times New Roman", Times, serif;
+}
+li span {
+font: bold 18px "Times New Roman", Times, serif;
+}
