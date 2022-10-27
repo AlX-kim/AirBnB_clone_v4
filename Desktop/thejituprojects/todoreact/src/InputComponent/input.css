@@ -1,0 +1,70 @@
+.content
+{
+  margin-top: 20px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  visibility:hidden;  
+  width:30%;
+  height: 80%;
+  background-color:#e4ddf4;
+  padding: 30px 35px 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.click-me
+{
+  width:100%;
+  background: #5D9B95;
+  border: 1px solid yellow;
+  text-align:center;
+  font-size:24px;
+  cursor:pointer;
+}
+#click
+{
+  background-color: white;
+  display:none;
+}
+.click-me:hover
+{
+  background-color: #0a5378;
+  color: white;
+}
+
+#click:checked~.content
+{
+  opacity:1;
+  visibility:visible;
+}
+.grid-1{
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.titles{
+  display: flex;
+  gap: 5px;
+}
+.titles h1{
+  width: 30%;
+}
+.header{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-content: space-around;
+  align-items: center;
+  justify-content: center;
+}
+.addtext{
+  width: 20%;
+}
+.seachBtn{
+  background-color: #9b9caa;
+}
+.search{
+  background-color: #e4ddf4;
+  width: 50%;
+}
