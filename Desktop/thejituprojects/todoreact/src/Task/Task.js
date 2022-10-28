@@ -9,7 +9,7 @@ export default function Task({items, deleHandler, handleShow}) {
     <div >
      {
         items.map((item, index)=>(
-         <Buttons item={item}  items={items} index={index}  deleHandler={deleHandler}  handleShow={handleShow}/> 
+         <Buttons item={item}   index={index}  deleHandler={deleHandler}  handleShow={handleShow}/> 
         ))
      }
     

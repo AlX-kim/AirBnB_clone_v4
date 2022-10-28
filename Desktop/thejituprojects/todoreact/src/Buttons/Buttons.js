@@ -1,8 +1,8 @@
 import React from 'react'
 import './button.css'
- import { useState } from 'react'
+import { useState } from 'react'
 
-export default function Buttons({item, deleHandler,index, handleShow, items}) {
+export default function Buttons({item, deleHandler,index, handleShow}) {
 
 const[isActive, setIsActive]=useState(false)
 
@@ -16,12 +16,16 @@ const handleDone=()=>{
 }
     
   return (
- <div className='main-div'>
-<div>
+ <div className='main-div' >
+
+  <div className='task-1' style={{
+  textDecoration: isActive ? 'line-through' : '',
+  color: isActive ? 'red' : '',
+}}>
 <div className='task-2'>
 
 <p>{item.task}</p>
-</div> 
+</div>
 <div className='task-3'> 
 <p>{item.date}</p>
 </div>
@@ -40,6 +44,6 @@ const handleDone=()=>{
 
 <button onClick={()=>{handleDone()}}> Done</button>
 </div>
-    </div> 
+  </div> 
   )
 }

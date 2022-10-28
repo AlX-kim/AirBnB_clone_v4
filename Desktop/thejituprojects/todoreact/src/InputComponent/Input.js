@@ -14,8 +14,10 @@ export default function Input() {
   const [date, setDate]=useState()
   const [items, setItems]=useState([])
   const [option, setOption]=useState(options[0].value)
-  const [modal, setModal]=useState(false)
   const [message, setMessage]=useState('')
+  const[isActive, setIsActive]=useState({})
+
+
   const newItem=() => {
 
     setItems([
@@ -38,28 +40,34 @@ const deleHandler=(index)=>{
 
 
 }
+
+const submitHandle=()=>{
+  setIsActive({
+    visibility:  'hidden',
+    opacity: '0',
+  })
+
+}
+
 const edit=[...items]
-
-// const color1={
-//   color:"red",
-//   opacity:"1",
-//   visibility:"visible"
-
-// }
-
 const handleShow=(index)=>{
         let findtask=edit.at(index)
         setTask(findtask.task)
         setDate(findtask.date)
         setOption(findtask.option)
+        edit.splice(index, 1);
+        setItems(edit)
+
         handleModal()
 }
  const handleModal=()=>{
-  console.log("Emmanuel");
-
-setModal(true)
-
+  setIsActive({
+    visibility:  'visible',
+    opacity: '1',
+  })
  }
+
+
 const search=[...items]
 
  const seachBtn=()=>{
@@ -75,35 +83,36 @@ const search=[...items]
     }
 })
 setItems(filtItem)
-console.log(filtItem);
  }
 
 
 
 
 return (
+
 <div className="grid-1">
   <div className="header">
   <div className="addtext">
-  <div>
-
   <input type="checkbox" id="click"  />
 
-  <label htmlFor="click" className="click-me" checked={modal} onChange={()=>{handleModal()}}>Add Task + </label>
+  <label htmlFor="click" className="click-me" onClick={handleModal} >Add Task + </label>
 
 
-  <div className="content" >
-    <input type="text" value={task} onChange={e => setTask(e.target.value)}/>
-    <input type="date" value={date} onChange={e => setDate(e.target.value)}/>
+  <div className="content"  style={isActive}>
+     <label htmlFor="title">Title:</label>
+    <input type="text" id="title" value={task} onChange={e => setTask(e.target.value)}/>
 
-    <select value ={option} onChange={onOptionChangeHandler}>
+    <label htmlFor="date">Deadline:</label>
+    <input type="date"id="date" value={date} onChange={e => setDate(e.target.value)}/>
+
+    <label htmlFor="priority">Priority:</label>
+    <select id="priority" value ={option} onChange={onOptionChangeHandler}>
    {options.map(option => (
           <option  value={option.value}>
             {option.text}
           </option>))}
 </select>
-    <input type="submit" onClick={newItem}/>S
-  </div>
+    <input type="submit" onClick={()=>{newItem();submitHandle()}} />
   </div>
   </div>
   <div>
@@ -111,13 +120,13 @@ return (
   <input   className="search" value={message} onChange={(event)=>{setMessage(event.target.value)}
   }/>
 
-  <button className="seachBtn" onClick={()=>{seachBtn()}}> search</button>
+  <button className="seachBtn" onClick={()=>{seachBtn()}} > search</button>
   </div>
   </div>
 <div className="titles">
-    <h1> Tasks</h1>
-    <h1> Deadline</h1>
-    <h1> Priority</h1>
+    <h4> Tasks </h4>
+    <h4> Deadline</h4>
+    <h4> Priority</h4>
 
   </div>
   <div>

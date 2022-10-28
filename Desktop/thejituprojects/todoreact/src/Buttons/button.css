@@ -1,5 +1,27 @@
 
 
+.main-div{
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 90%;
+    padding-left: 5px;
+    border: 1px solid green;
+    display: flex;
+gap: 10px;
+text-align: center;
+}
+.task-1{
+    width:90%;
+    display: flex;
+}
+.task-5{
+display: flex;
+align-items: center;
+/* border: 1px solid yellow; */
+align-content:flex-end ;
+/* justify-content: ; */
+
+}
 
 .task-2{
     margin-left: 10px;
@@ -7,7 +29,6 @@
 
     width: 30%;
     padding-left: 5px;
-    /* border: 1px solid yellow; */
 }
 .task-4{
     margin-left: 10px;
@@ -22,21 +43,6 @@
     width: 50%;
     padding-left: 5px;
 }
-.main-div{
-    margin-left: 10px;
-    margin-top: 10px;
-    width: 90%;
-    padding-left: 5px;
-    border: 1px solid green;
-    display: flex;
-gap: 10px;
-text-align: center;
-}
-.task-5{
-    display: flex;
-    /* height: 50%; */
-align-items: center;
-justify-content: first baseline;
-/* border: 1px solid blue; */
 
-}
+
+
